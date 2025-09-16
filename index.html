@@ -2,64 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Links Page</title>
+  <title>My Website - Mechanical Engineering Student</title>
   <style>
-    body { background: linear-gradient(to right, gray, white, cyan); font-family: Arial; color: black; }
-    header, footer { background: gray; color: white; text-align: center; padding: 15px; }
-    nav { background: black; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    body {
+      background: linear-gradient(to right, gray, white, cyan, lightblue);
+      font-family: Arial, sans-serif;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: gray;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    nav {
+      background-color: black;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
     nav a:hover { color: cyan; }
-    .content { padding: 20px; }
+    .content { padding: 20px; max-width: 900px; margin: auto; }
+    .section { display: none; }
+    .active { display: block; }
+    img.profile {
+      max-width: 220px;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
     ul { line-height: 1.8; }
   </style>
+  <script>
+    function showSection(sectionId) {
+      let sections = document.querySelectorAll('.section');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+    }
+    window.onload = function() {
+      showSection('main'); // Default section
+    };
+  </script>
 </head>
 <body>
   <header>
-    <h1>Important Links</h1>
+    <h1>Welcome to My Website</h1>
   </header>
 
   <nav>
-    <a href="C:\Users\Jim Jester\OneDrive\Documents\Mayuyo-Main.html">Main</a>
-    <a href="C:\Users\Jim Jester\OneDrive\Documents\Mayuyo-Home.html">Home</a>
-    <a href="C:\Users\Jim Jester\OneDrive\Documents\Mayuyo-FAQs.html">FAQ</a>
-    <a href="C:\Users\Jim Jester\OneDrive\Documents\Mayuyo-Contact.html">Contact</a>
-    <a href="C:\Users\Jim Jester\OneDrive\Documents\Mayuyo-Link.html">Links</a>
+    <a onclick="showSection('main')">Main</a>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('faq')">FAQ</a>
+    <a onclick="showSection('contact')">Contact</a>
+    <a onclick="showSection('links')">Links</a>
   </nav>
 
   <div class="content">
-    <h2>Useful Resources</h2>
-    <ul>
-      <li>
-        Homework 03 Word File: 
-        <a href="https://docs.google.com/document/d/1BZn9JAV9ukAuRWqrfua338UZourFwE91/edit?usp=sharing&ouid=111469075663275566522&rtpof=true&sd=true" target="_blank">
-          Open Document
-        </a>
-      </li>
-      <li>
-        Homework 04 Excel File: 
-        <a href="https://docs.google.com/spreadsheets/d/1jHQmllWER_LDxCYyyudBAtXB7O41bOzB/edit?usp=sharing&ouid=111469075663275566522&rtpof=true&sd=true" target="_blank">
-          Open Spreadsheet
-        </a>
-      </li>
-      <li>
-        Student Grades Website: 
-        <a href="https://reportgrades.bpsu.edu.ph/" target="_blank">
-          Visit Grades Portal
-        </a>
-      </li>
-    </ul>
-        View This:
-        <a href="https://youtu.be/dQw4w9WgXcQ?si=CBnpuidPOZobbffH/" target+"_blank>
-          Open Youtube Link
-        </a>
-      </li>
-    </ul>
+    <!-- MAIN -->
+    <div id="main" class="section">
+      <h2>About Me</h2>
+      <img src="my_picture.jpg" alt="My Picture" class="profile">
+      <p>Hello! I am <strong>Jim Mayuyo</strong>, a dedicated <strong>Mechanical Engineering student</strong> at BPSU. 
+      This website showcases my academic work, technical projects, and learning journey in engineering.</p>
+      <h3>My Expertise</h3>
+      <ul>
+        <li>Design and analysis of mechanical systems</li>
+        <li>Thermodynamics, fluid mechanics, and materials science</li>
+        <li>Hands-on experience with CAD and engineering software</li>
+        <li>Passionate about innovation and problem-solving</li>
+      </ul>
+    </div>
 
+    <!-- HOME -->
+    <div id="home" class="section">
+      <h2>Homework 3 — NASA Mars Science Helicopter</h2>
+      <p>This page summarizes key points from the NASA technical memorandum:
+      <em><strong>Mars Science Helicopter (MSH) Conceptual Design</strong></em>.</p>
+      <p>
+        📄 <a href="https://ntrs.nasa.gov/api/citations/20200002139/downloads/1405_Johnson_Final_080420%5B1%5D.pdf" target="_blank">
+        Open the NASA PDF (Homework 3)</a>
+      </p>
+      <h3>Overview</h3>
+      <p>The Mars Science Helicopter (MSH) is a second-generation rotorcraft concept designed for 
+      scientific exploration on Mars. Unlike Ingenuity, MSH is aimed at carrying larger science payloads 
+      and operating independently to expand Mars exploration capabilities.</p>
+      <h3>Key Highlights</h3>
+      <ul>
+        <li><strong>Purpose:</strong> Real science missions, not just technology demo.</li>
+        <li><strong>Payload:</strong> ~2–3 kg of scientific instruments.</li>
+        <li><strong>Mass:</strong> Total vehicle mass ≈ 20–30 kg.</li>
+        <li><strong>Flight Range:</strong> ~2–5 km per flight with hover times of 2–10 minutes.</li>
+        <li><strong>Designs:</strong> Coaxial and hexacopter configurations studied.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ -->
+    <div id="faq" class="section">
+      <h2>Frequently Asked Questions</h2>
+      <h3>1. What is this website about?</h3>
+      <p>This is my personal site for school work, projects, and sharing my journey as a Mechanical Engineering student.</p>
+      <h3>2. What is Homework 3?</h3>
+      <p>It is a summary of NASA’s Mars Science Helicopter conceptual design document.</p>
+      <h3>3. Can I see the full NASA document?</h3>
+      <p>Yes, you can view it <a href="https://ntrs.nasa.gov/api/citations/20200002139/downloads/1405_Johnson_Final_080420%5B1%5D.pdf" target="_blank">here</a>.</p>
+      <h3>4. How can I contact you?</h3>
+      <p>You can email me or reach out via social links on the Contact section.</p>
+      <h3>5. What are your goals as a Mechanical Engineer?</h3>
+      <p>To apply engineering principles in solving real-world problems and contribute to innovative projects.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="section">
+      <h2>My Contact Information</h2>
+      <img src="my_picture.jpg" alt="Profile Picture" class="profile">
+      <ul>
+        <li>Email: <a href="mailto:jjgmayuyo24@bpsu.edu.ph">jjgmayuyo24@bpsu.edu.ph</a></li>
+        <li><a href="https://www.facebook.com/share/17Ah53HHrZ/" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/jimm__jjm?igsh=MTNpMzBzc3cwdjBnZQ==" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+
+    <!-- LINKS -->
+    <div id="links" class="section">
+      <h2>Useful Resources</h2>
+      <ul>
+        <li>Homework 03 Word File: <em>paste link here</em></li>
+        <li>Homework 04 Excel File: <em>paste link here</em></li>
+        <li>Student Grades Website: <em>paste link here</em></li>
+      </ul>
+    </div>
   </div>
 
   <footer>
-    <p>Contact me via <a href="mailto:jjgmayuyo24@bpsu.edu.ph">Email</a></p>
+    <p>Contact me via <a href="mailto:jjgmayuyo24@bpsu.edu.ph" style="color:white;">Email</a></p>
   </footer>
 </body>
 </html>
-
